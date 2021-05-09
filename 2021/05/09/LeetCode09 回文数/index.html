@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, UZUMAKIRITO">
+    <meta name="keywords" content="LeetCode09--Palindrome Number, UZUMAKIRITO">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | UZUMAKIRITO</title>
+    <title>LeetCode09--Palindrome Number | UZUMAKIRITO</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">tags</h1>
+                    <h1 class="description center-align post-title">LeetCode09--Palindrome Number</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">力扣算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
+                                LeetCode算法
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -448,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-05-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-05-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    358
                 </div>
                 
 
@@ -487,7 +504,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="题目09：回文数（简单难度）"><a href="#题目09：回文数（简单难度）" class="headerlink" title="题目09：回文数（简单难度）"></a>题目09：回文数（简单难度）</h1><h3 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h3><p>思路：我们应该联想到第七题，整数的反转，判断一个数字是不是回文数，我们可以将它反转过后与原数字比较。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
+            x<span class="token operator">/=</span><span class="token number">10</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&gt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            rev <span class="token operator">=</span> rev<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> rev<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> x<span class="token operator">==</span>rev<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>时间复杂度：和求转置⼀样，x 有多少位，就循环多少次，所以是 O（log（x）） 。</p>
+<p>空间复杂度：O（1）。</p>
+<h3 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h3><p>思路：我们只需要将这个数的一半进行反转比较就可以了，这样可以减少一半的计算量。</p>
+<p>这里我们要会求一个整数的位数是多少，对于位数较少的情况我们可以用if  &gt;10,&gt;100…来确定。对于位数较多的一般求法是(int)Math.log10(x)+1。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> digit <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">log10</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> reverse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>pop <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> digit<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
+            reverse <span class="token operator">=</span> reverse<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
+            x <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">/</span><span class="token number">10</span><span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>时间复杂度：循环 x 的总位数的⼀半次，所以时间复杂度依旧是 O（log（x））。 </p>
+<p>空间复杂度：O（1），常数个变量。</p>
+
                 
             </div>
             <hr/>
@@ -513,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wht000807.github.io/friends/index.html">http://wht000807.github.io/friends/index.html</a>
+                    <a href="http://wht000807.github.io/2021/05/09/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/">http://wht000807.github.io/2021/05/09/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +608,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">力扣算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -862,13 +928,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/friends/index.html">
+                <a href="/2021/05/09/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="LeetCode09--Palindrome Number">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">LeetCode09--Palindrome Number</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -879,17 +945,33 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            UZUMAKIRITO
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
+                                    LeetCode算法
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">力扣算法</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -897,16 +979,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/friends/index.html">
+                <a href="/2021/05/07/LeetCode07%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="LeetCode07--Reverse Integer">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">LeetCode07--Reverse Integer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -917,17 +999,32 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            UZUMAKIRITO
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
+                                    LeetCode算法
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">力扣算法</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
