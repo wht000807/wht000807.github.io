@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode09--Palindrome Number, UZUMAKIRITO">
+    <meta name="keywords" content="LeetCode104-- Maximum Depth of Binary Tree, UZUMAKIRITO">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode09--Palindrome Number | UZUMAKIRITO</title>
+    <title>LeetCode104-- Maximum Depth of Binary Tree | UZUMAKIRITO</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode09--Palindrome Number</h1>
+                    <h1 class="description center-align post-title">LeetCode104-- Maximum Depth of Binary Tree</h1>
                 </div>
             </div>
         </div>
@@ -465,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-09
+                    2021-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    148
                 </div>
                 
 
@@ -504,47 +504,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目09：回文数（简单难度）"><a href="#题目09：回文数（简单难度）" class="headerlink" title="题目09：回文数（简单难度）"></a>题目09：回文数（简单难度）</h1><h3 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h3><p>思路：我们应该联想到第七题，整数的反转，判断一个数字是不是回文数，我们可以将它反转过后与原数字比较。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
-            x<span class="token operator">/=</span><span class="token number">10</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&gt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            rev <span class="token operator">=</span> rev<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> rev<span class="token punctuation">;</span>
+                <h1 id="第104题：二叉树的最大深度-Easy"><a href="#第104题：二叉树的最大深度-Easy" class="headerlink" title="第104题：二叉树的最大深度(Easy)"></a>第104题：二叉树的最大深度(Easy)</h1><p>题目：给定一个二叉树，找出其最大深度。</p>
+<p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
+<p><strong>说明:</strong> 叶子节点是指没有子节点的节点。</p>
+<p><strong>示例：</strong><br>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
+<pre class="line-numbers language-none"><code class="language-none">  3
+ / \
+9  20
+  /  \
+ 15   7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>返回它的最大深度 3 。</p>
+<p>解答：依旧是考的二叉树的遍历。最简单的思路就是用递归进行 DFS 即可。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">maxDepth</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> x<span class="token operator">==</span>rev<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度：和求转置⼀样，x 有多少位，就循环多少次，所以是 O（log（x）） 。</p>
-<p>空间复杂度：O（1）。</p>
-<h3 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h3><p>思路：我们只需要将这个数的一半进行反转比较就可以了，这样可以减少一半的计算量。</p>
-<p>这里我们要会求一个整数的位数是多少，对于位数较少的情况我们可以用if  &gt;10,&gt;100…来确定。对于位数较多的一般求法是(int)Math.log10(x)+1。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> digit <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">log10</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> reverse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>pop <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> digit<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
-            reverse <span class="token operator">=</span> reverse<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
-            x <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">/</span><span class="token number">10</span><span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度：循环 x 的总位数的⼀半次，所以时间复杂度依旧是 O（log（x））。 </p>
-<p>空间复杂度：O（1），常数个变量。</p>
 
                 
             </div>
@@ -571,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wht000807.github.io/2021/05/09/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/">http://wht000807.github.io/2021/05/09/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/</a>
+                    <a href="http://wht000807.github.io/2021/05/15/LeetCode104%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">http://wht000807.github.io/2021/05/15/LeetCode104%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -927,13 +905,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/11/LeetCode96%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
+                <a href="/2021/05/17/LeetCode105%E6%A0%B9%E6%8D%AE%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E5%92%8C%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="LeetCode96--Unique Binary Search Tree">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode104-- Construct Binary Tree from Preorder and Inorder Traversal">
                         
-                        <span class="card-title">LeetCode96--Unique Binary Search Tree</span>
+                        <span class="card-title">LeetCode104-- Construct Binary Tree from Preorder and Inorder Traversal</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -944,7 +922,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-17
                         </span>
                         <span class="publish-author">
                             
@@ -980,13 +958,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/07/LeetCode07%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
+                <a href="/2021/05/12/LeetCode102%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="LeetCode07--Reverse Integer">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeetCode102--Binary Tree Level Order Traversal">
                         
-                        <span class="card-title">LeetCode07--Reverse Integer</span>
+                        <span class="card-title">LeetCode102--Binary Tree Level Order Traversal</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -997,7 +975,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
