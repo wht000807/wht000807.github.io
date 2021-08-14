@@ -1,0 +1,1823 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机网络知识点梳理, UZUMAKIRITO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机网络知识点梳理 | UZUMAKIRITO</title>
+    <link rel="icon" type="image/png" href="/medias/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="UZUMAKIRITO" type="application/atom+xml">
+</head>
+
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">UZUMAKIRITO</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">UZUMAKIRITO</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wht000807" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>To my github
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wht000807" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="To my github" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机网络知识点梳理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">计算机基础</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">计算机网络</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="计算机网络知识点梳理"><a href="#计算机网络知识点梳理" class="headerlink" title="计算机网络知识点梳理"></a>计算机网络知识点梳理</h1><h2 id="★★★-各层协议的作用，以及-TCP-IP-协议的特点"><a href="#★★★-各层协议的作用，以及-TCP-IP-协议的特点" class="headerlink" title="★★★ 各层协议的作用，以及 TCP/IP 协议的特点"></a>★★★ 各层协议的作用，以及 TCP/IP 协议的特点</h2><p><strong>应用层</strong>：任务是通过应⽤进程间的交互来完成特定⽹络应⽤</p>
+<p><strong>传输层</strong>：任务是负责向两台主机进程之间的通信提供通⽤的数据传输服务</p>
+<p><strong>网络层</strong>：任务是选择合适的⽹间路由和交换结点， 确保数据及时传送</p>
+<p><strong>链路层</strong>：两台主机之间的数据传输，总是在⼀段⼀段的链路上传输送的，这就需要使⽤专⻔的链路层的协议</p>
+<p><strong>TCP/IP 协议的特点：</strong></p>
+<p>（1）协议标准是完全开放的，并且独立于特定的计算机硬件与操作系统。</p>
+<p>（2）独立于网络硬件系统，可以运行在广域网，更适合于互联网。</p>
+<p>（3）网络地址统一分配，网络中每一设备和终端都具有一个唯一地址。</p>
+<p>（4）高层协议标准化，可以提供多种多样可靠网络服务。</p>
+<h2 id="★★☆-以太网的特点，以及帧结构"><a href="#★★☆-以太网的特点，以及帧结构" class="headerlink" title="★★☆ 以太网的特点，以及帧结构"></a>★★☆ 以太网的特点，以及帧结构</h2><p><strong>特点：</strong>最初的以太网是将许多计算机都连接到 <strong>一根总线</strong> 上。高速有效，不用划分信道，但是不安全</p>
+<p>在以太网链路上的数据包称作<strong>以太帧</strong></p>
+<p>以太帧起始部分由前同步码和帧开始定界符组成，后面紧跟着一个以太网报头，以 MAC 地址说明目的地址和源地址。以太帧的中部是该帧负载的包含其他协议报头的数据包，如 IP 协议。</p>
+<p>以太帧由一个 32 位冗余校验码结尾，用于检验数据传输是否出现损坏。以太帧结构如图所示</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/191106/6-191106130541362.gif" alt="以太帧结构（格式）"></p>
+<h2 id="★★☆-集线器、交换机、路由器的作用，以及所属的网络层"><a href="#★★☆-集线器、交换机、路由器的作用，以及所属的网络层" class="headerlink" title="★★☆ 集线器、交换机、路由器的作用，以及所属的网络层"></a>★★☆ 集线器、交换机、路由器的作用，以及所属的网络层</h2><p><strong>集线器</strong>(Hub) —— 工作在物理层</p>
+<p>信号在线路中传播会进行衰减，集线器的作用就是对信号进行再生放大，从而扩大了网络的传输距离</p>
+<p><strong>交换机</strong>(Switch)  —— 工作在数据链路层（<strong>交换机转发的消息叫做帧</strong>）</p>
+<p>集线器的信道利用率太低了，所以就出现了交换机。交换机很很多个端口，每个端口都能够连接一台计算机，当计算机A向计算机B发送信息时，会在内部建立起一条临时性的数据传输通道，如果有多台计算机同时通信，那么就会维护多条通道。</p>
+<p><strong>路由器</strong>(Router)  —— 工作在网络层（<strong>路由器转发的消息叫做IP数据报</strong>）</p>
+<p>交换机是工作在数据链路层的，也即交换机只能转发局域网内的帧。如果网络A的主机想要发消息给网络B的主机就需要路由器了。</p>
+<p>如果网络A的主机1想要向网络B的主机2发送消息，那么主机1必须在IP数据报的首部加上源IP地址和目标IP地址，那么路由器A会根据目标IP地址将IP数据报转发到路由器B。<strong>路由器B接收到该IP数据报后，会将该IP数据报封装成帧，然后在帧的首部加上主机B的MAC地址作为目的地址，然后把该消息转发给主机B，或者转发给交换机，由交换机转发给主机B。</strong></p>
+<p><strong>那么路由器B怎么知道某个IP地址对应了哪个主机，且该主机的MAC地址是什么呢？</strong></p>
+<p>路由器内部维护了一张arp表，即地址解析协议表，它知道哪个IP地址对应了哪个MAC地址</p>
+<h2 id="★★☆-TCP和IP报文头部"><a href="#★★☆-TCP和IP报文头部" class="headerlink" title="★★☆ TCP和IP报文头部"></a>★★☆ TCP和IP报文头部</h2><p><strong>IP协议</strong>是网络层的主要协议，为上层传输层提供无连接、无状态、不可靠的服务。优点是简单高效。无状态是指各个IP报文是独立传送的，不同步传输状态的信息，所以容易发生重复和乱序的情况。不可靠是指IP协议不能保证数据报一定能被送达，可靠性主要是通过传输层的TCP协议来保证的。</p>
+<p><img src="https://img-blog.csdn.net/20180513231933291?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NvdWxsc2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>IP头部通常有20字节，加上选项的话，最多不超过60字节。</p>
+<p>4位版本：指IP协议版本号，是IPV4还是IPV6</p>
+<p>4位首部长度：指IP头部的长度，以4字节为单位，最大值为（1111）b × 4 = 60字节</p>
+<p>8位服务类型：包含一个4位优先权字段：最小延时，最大吞吐量，最高可靠性和最小费用。（暂时不清楚具体通途，待补充）</p>
+<p>16位总长度：表示整个IP数据报的长度，最大为65535，但是由于有MTU的限制，一般达不到这个数值</p>
+<p>16位标识：数据报的标识，系统采用边发送边赋值的方式</p>
+<p>3位标志：分别为保留区，禁止分片标志，和更多分片标志。DF位设置时表示禁止分区，如果数据报文过大，可能会发送失败。</p>
+<p>MF位表示后面还有报文段，如果报文分片的话，除了最后一个分片，其他的报文片都置1</p>
+<p>13位片偏移：分片相对于原始报文片开始的偏移</p>
+<p>8位生存时间：表示报文到达目的之前，允许经过的路由跳数，没经过1跳，TTL值减一，值减到0的时候，丢弃</p>
+<p>8位协议：用来区分上层协议（例如TCP，UDP等）</p>
+<p>16位首部校验和：以CRC算法校验数据在传输过程中头部是否损坏</p>
+<p>32位源IP地址：发送端的IP地址</p>
+<p>32位目的IP地址：目的IP地址</p>
+<p> <strong>TCP协议</strong>是面向连接的协议，是工作在传输层的协议。TCP协议通过三次握手、四次挥手、流量控制、拥塞控制、超时重传、确认报文等机制来保证可靠性。</p>
+<p><img src="https://img-blog.csdn.net/20180513233934591?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NvdWxsc2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>同IP头部类似，TCP头部通常也为20字节，带上选项部分，最大不超过60字节</p>
+<p>16位源端口号：指发送端的端口号</p>
+<p>16位目的端口号：指目的端的端口号</p>
+<p>4位头部长度：同IP头部，表示TCP头部的大小，以4字节为单位。</p>
+<p>32位序列号：TCP通信过程中，通过序列号来保证传输过程中数据的有序性</p>
+<p>32位确认号：用以对接受到的报文进行确认</p>
+<p>保留6位</p>
+<p>URG：表示紧急指针</p>
+<p>ACK：表示确认号</p>
+<p>PSH：通知对端立即从缓冲区取走数据</p>
+<p>SYN：表示请求建立连接</p>
+<p>FIN：标志要通知对端本端的数据发送要关闭</p>
+<p>16位窗口大小：TCP流量控制的手段，告诉发送方本端的接收端缓冲区还能接受多少数据</p>
+<p>16位校验和：由发送方填充，接收端用CRC校验算法，用以检查TCP报文在传输过程中是否有损坏</p>
+<h2 id="★☆☆-ARP-协议的作用，以及维护-ARP-缓存的过程"><a href="#★☆☆-ARP-协议的作用，以及维护-ARP-缓存的过程" class="headerlink" title="★☆☆ ARP 协议的作用，以及维护 ARP 缓存的过程"></a>★☆☆ ARP 协议的作用，以及维护 ARP 缓存的过程</h2><p>在 Linux 系统中，我们可以使⽤ arp -a 命令来查看 ARP 缓存的内容。</p>
+<p>通过目的IP地址而获取目的MAC地址的过程是由ARP协议来实现的。</p>
+<p>APR缓存用来存放IP地址和MAC地址的关联信息。在发送数据前，设备会先查找ARP缓存表。如果缓存表中存在对方设备的MAC地址，则直接采用该MAC地址来封装帧，然后在发出去。如果缓存表中不存在相应信息，则通过发送ARP request报文来获得它。学习到的IP地址和MAC地址的映射关系会被放入ARP缓存表中存放一段时间。在有效期内，设备可以直接从这个表中查找目的MAC地址来进行数据封装，而无需进行ARP查询。过了这段有效期，ARP就会被自动删除。</p>
+<h2 id="★★★-UDP-与-TCP-比较，分析上层协议应该使用-UDP-还是-TCP"><a href="#★★★-UDP-与-TCP-比较，分析上层协议应该使用-UDP-还是-TCP" class="headerlink" title="★★★ UDP 与 TCP 比较，分析上层协议应该使用 UDP 还是 TCP"></a>★★★ UDP 与 TCP 比较，分析上层协议应该使用 UDP 还是 TCP</h2><h2 id="★★★-理解三次握手以及四次挥手具体过程，状态转移。三次握手的原因、四次挥手原因、TIME-WAIT、CLOSE-WAIT-的意义"><a href="#★★★-理解三次握手以及四次挥手具体过程，状态转移。三次握手的原因、四次挥手原因、TIME-WAIT、CLOSE-WAIT-的意义" class="headerlink" title="★★★ 理解三次握手以及四次挥手具体过程，状态转移。三次握手的原因、四次挥手原因、TIME_WAIT、CLOSE_WAIT 的意义"></a>★★★ 理解三次握手以及四次挥手具体过程，状态转移。三次握手的原因、四次挥手原因、TIME_WAIT、CLOSE_WAIT 的意义</h2><p><strong>三次握手的过程：</strong></p>
+<p><img src="https://i.loli.net/2021/08/15/zdageNLAUiQ9JsF.png" alt="clip_image002.png"></p>
+<p>第一次握手：客户端发起建立连接请求，并发送SYN和一个序列号i</p>
+<p>第二次握手：服务器确认与客户端建立连接，发送SY N和一个自己的序列号j，同时发送ACK以及确认值i+1</p>
+<p>第三次握手：客户端向服务器发送ACK以及确认值j+1</p>
+<p><strong>原因：</strong>通过三次握⼿能防⽌历史连接的建⽴，能减少双⽅不必要的资源开销，能帮助双⽅同步初始化序列号</p>
+<p>在网络拥堵的情况下⼀个「旧 SYN 报⽂」⽐「最新的 SYN 」 报⽂早到达了服务端； 那么此时服务端就会回⼀个 SYN + ACK 报⽂给客户端； 客户端收到后可以根据⾃身的上下⽂，判断这是⼀个历史连接（序列号过期或超时），那么第三次握手客户端就会发送 RST 报⽂给服务端，表示中⽌这⼀次连接</p>
+<p><strong>四次挥手的过程：</strong></p>
+<p><img src="https://i.loli.net/2021/08/15/ENRmxj6qFzgGVTQ.png" alt="clip_image004.png"></p>
+<p>第一次挥手：主动断开方要求关闭连接，并且发送FIN</p>
+<p>第二次挥手：被动断开方确认关闭连接发送ACK和确认值i+2</p>
+<p>第三次挥手：被动断开方紧接着发送FIN</p>
+<p>第四次挥手：主动断开方发送ACK和确认值J+2表示确认</p>
+<p><strong>原因：</strong>服务端需要继续发送数据，所以服务端的 ACK 和 FIN ⼀般都会分开发送，从⽽⽐三次握⼿导致多了⼀次</p>
+<p><strong>状态转移过程：</strong></p>
+<p>第三次握⼿是可以携带数据的，前两次握⼿是不可以携带数据的</p>
+<p><img src="https://i.loli.net/2021/08/15/wLVj14RhUCKGbJx.png" alt="clip_image006.png"></p>
+<p> <strong>TIME_WAIT</strong>:</p>
+<p>主动关闭方在收到被动关闭方的<code>FIN</code>包后并返回<code>ACK</code>后，会进入<code>TIME_WAIT</code>状态，<code>TIME_WAIT</code>状态又称<code>2MSL</code>状态</p>
+<p><strong>为什么是维持2MSL</strong></p>
+<ul>
+<li>一个<code>MSL</code>是确保主动关闭方最后的<code>ACK</code>能够到达对端。</li>
+<li>一个<code>MSL</code>是确保被动关闭方重发的<code>FIN</code>能够被主动关闭方收到。</li>
+</ul>
+<p><strong>存在的意义：</strong></p>
+<p>（1）保证可靠的终止TCP连接（2）保证迟来的数据能被识别并丢弃</p>
+<p><strong>优化：</strong>调整系统内核参数  调整短链接为长链接</p>
+<p><strong>CLOSE_WAIT:</strong></p>
+<p>在被动关闭连接情况下，在已经接收到FIN，但是还没有发送自己的FIN的时刻，连接处于CLOSE_WAIT状态。</p>
+<p> 出现大量close_wait的现象，主要原因是某种情况下对方关闭了socket链接，但是我方忙与读或者写，没有关闭连接。解决方法基本的思想就是要检测出对方已经关闭的socket。</p>
+<h2 id="★★★-可靠传输原理，并设计可靠-UDP-协议"><a href="#★★★-可靠传输原理，并设计可靠-UDP-协议" class="headerlink" title="★★★ 可靠传输原理，并设计可靠 UDP 协议"></a>★★★ 可靠传输原理，并设计可靠 UDP 协议</h2><p><strong>TCP可靠传输：</strong>确认机制、重传机制、滑动窗口。</p>
+<p><strong>可靠性</strong></p>
+<p> 1．应用数据被分割成TCP认为最适合发送的数据块。这和UDP完全不同，应用程序产生的数据长度将保持不变。由TCP传递给IP的信息单位称为报文段或段（segment）。</p>
+<p>2．当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。当TCP收到发自TCP连接另一端的数据，它将发送一个确认。TCP有延迟确认的功能，在此功能没有打开，则是立即确认。功能打开，则由定时器触发确认时间点。</p>
+<p>3．TCP将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP将丢弃这个报文段和不确认收到此报文段（希望发端超时并重发）。</p>
+<p>4．既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。如果必要，TCP将对收到的数据进行重新排序，将收到的数据以正确的顺序交给应用层。</p>
+<p>5．既然IP数据报会发生重复，TCP的接收端必须丢弃重复的数据。</p>
+<p>6．TCP还能提供流量控制。TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据。这将防止较快主机致使较慢主机的缓冲区溢出。</p>
+<p><strong>重传策略</strong></p>
+<p>TCP协议用于控制数据段是否需要重传的依据是设立重发定时器。在发送一个数据段的同时启动一个重传，如果在重传超时前收到确认(Acknowlegement)就关闭该重传，如果重传超时前没有收到确认，则重传该数据段。在选择重发时间的过程中，TCP必须具有自适应性。它需要根据互联网当时的通信情况，给出合适的重发时间。</p>
+<p>这种重传策略的关键是对定时器初值的设定。采用较多的算法是Jacobson于1988年提出的一种不断调整超时时间间隔的动态算法。其工作原理是：对每条连接TCP都保持一个变量RTT（Round Trip Time），用于存放当前到目的端往返所需要时间最接近的估计值。当发送一个数据段时，同时启动连接的定时器，如果在定时器超时前确认到达，则记录所需要的时间（M），并修正[2]  RTT的值，如果定时器超时前没有收到确认，则将RTT的值增加1倍。通过测量一系列的RTT（往返时间）值，TCP协议可以估算数据包重发前需要等待的时间。在估计该连接所需的当前延迟时通常利用一些统计学的原理和算法（如Karn算法），从而得到TCP重发之前需要等待的时间值。</p>
+<p><strong>窗口确认</strong></p>
+<p>TCP的一项功能就是确保每个数据段都能到达目的地。位于目的主机的TCP服务对接受到的数据进行确认，并向源应用程序发送确认信息。使用数据报头序列号以及确认号来确认已收到包含在数据段的相关的数据字节。</p>
+<p>TCP在发回源设备的数据段中使用确认号，指示接收设备期待接收的下一字节。这个过程称为期待确认。</p>
+<p>源主机在收到确认消息之前可以传输的数据的大小称为窗口大小。用于管理丢失数据和流量控制。</p>
+<p><strong>UDP可靠传输：</strong></p>
+<p>传输层无法保证数据的可靠传输，只能通过应用层来实现了。实现的方式可以参照tcp可靠性传输的方式，只是实现不在传输层，实现转移到了应用层。</p>
+<p>最简单的方式是在应用层模仿传输层TCP的可靠性传输。下面不考虑拥塞处理，可靠UDP的简单设计。</p>
+<ul>
+<li><p>1、添加seq/ack机制，确保数据发送到对端</p>
+</li>
+<li><p>2、添加发送和接收缓冲区，主要是用户超时重传。</p>
+</li>
+<li><p>3、添加超时重传机制。</p>
+<p><strong>详细说明：</strong>发送端发送数据时，生成一个随机seq=x，然后每一片按照数据大小分配seq。数据到达接收端后接收端放入缓存，并发送一个ack=x的包，表示对方已经收到了数据。发送端收到了ack包后，删除缓冲区对应的数据。时间到后，定时任务检查是否需要重传数据。</p>
+</li>
+</ul>
+<h2 id="★★☆-TCP-滑动窗口、拥塞控制的作用，理解具体原理"><a href="#★★☆-TCP-滑动窗口、拥塞控制的作用，理解具体原理" class="headerlink" title="★★☆ TCP 滑动窗口、拥塞控制的作用，理解具体原理"></a>★★☆ TCP 滑动窗口、拥塞控制的作用，理解具体原理</h2><p><strong>滑动窗口：</strong></p>
+<p>首先当然是可靠性，其次是传输效率，最后是稳定性</p>
+<p><img src="https://i.loli.net/2021/08/15/ZW1gd4i2Qp9slP3.png" alt="943267-20190304193946550-910449223.png"></p>
+<ol>
+<li>窗口大小是指无需等待确认就可以继续发送数据的最大值，上图的窗口大小是4000字节（4段）</li>
+<li>发送前4段时，无需ACK，直接发送</li>
+<li>收到第一个ACK后，滑动窗口向后移动，继续发送第五段的数据</li>
+<li>操作系统内核为了维护这个滑动窗口，需要开辟发送缓冲区来记录当前还有哪些数据没有应答，只有应答的数据才会从缓冲区中删除</li>
+<li>窗口越大，则网络的吞吐率就越高</li>
+</ol>
+<p><strong>拥塞控制：</strong></p>
+<p>前⾯的流量控制是避免「发送⽅」的数据填满「接收⽅」的缓存，但是并不知道⽹络的中发⽣了什么。</p>
+<p>在⽹络出现拥堵时，如果继续发送⼤量数据包，可能会导致数据包时延、丢失等，这时 TCP 就会重传数据，但是 ⼀重传就会导致⽹络的负担更重，于是会导致更⼤的延迟以及更多的丢包，这个情况就会进⼊恶性循环被不断地放 ⼤。所以，TCP 不能忽略⽹络上发⽣的事，它被设计成⼀个⽆私的协议，当⽹络发送拥塞时，TCP 会⾃我牺牲，降低 发送的数据量</p>
+<p>当网络出现拥塞就会发生数据包重传，分为两种：超时重传和快速重传</p>
+<p><img src="https://i.loli.net/2021/08/15/9VCtB4ei3gJXzIn.png" alt="K8PQT@D5E_0_DRIPYMHS5X6.png"></p>
+<p><strong>快速重传：</strong></p>
+<p>![RRD2@XA_`HBIHHZ_VFBHG7P.png](<a target="_blank" rel="noopener" href="https://i.loli.net/2021/08/15/owhFWnB9imvjrkd.png">https://i.loli.net/2021/08/15/owhFWnB9imvjrkd.png</a>)</p>
+<h2 id="★★☆-DNS-的端口号；TCP-还是-UDP；作为缓存、负载均衡"><a href="#★★☆-DNS-的端口号；TCP-还是-UDP；作为缓存、负载均衡" class="headerlink" title="★★☆ DNS 的端口号；TCP 还是 UDP；作为缓存、负载均衡"></a>★★☆ DNS 的端口号；TCP 还是 UDP；作为缓存、负载均衡</h2><p>DNS端口号：53</p>
+<p>DNS在进行区域传输的时候使用TCP协议，其它时候则使用UDP协议；</p>
+<p><strong>DNS缓存</strong>：有dns的地方,就有缓存。浏览器、操作系统、Local DNS、根域名服务器，它们都会对DNS结果做一定程度的缓存。</p>
+<p>DNS查询过程如下:</p>
+<ol>
+<li>首先搜索浏览器自身的DNS缓存,如果存在，则域名解析到此完成。</li>
+<li>如果浏览器自身的缓存里面没有找到对应的条目，那么会尝试读取操作系统的hosts文件看是否存在对应的映射关系,如果存在，则域名解析到此完成。</li>
+<li>如果本地hosts文件不存在映射关系，则查找本地DNS服务器(ISP服务器,或者自己手动设置的DNS服务器),如果存在,域名到此解析完成。</li>
+<li>如果本地DNS服务器还没找到的话,它就会向根服务器发出请求,进行递归查询。</li>
+</ol>
+<p> <strong>DNS负载均衡</strong>采用的是简单的轮询算法，不能区分服务器的差异，不能反映服务器的当前运行状态，不能做到为性能较好的服务器多分配请求，甚至会出现客户请求集中在某一台服务器上的情况。</p>
+<h2 id="★★★-GET-与-POST-比较：作用、参数、安全性、幂等性、可缓存"><a href="#★★★-GET-与-POST-比较：作用、参数、安全性、幂等性、可缓存" class="headerlink" title="★★★ GET 与 POST 比较：作用、参数、安全性、幂等性、可缓存"></a>★★★ GET 与 POST 比较：作用、参数、安全性、幂等性、可缓存</h2><p><strong>Get ⽅法</strong>的作用是请求从服务器获取资源，不会「破坏」服务器上的资源是安全的，因为它是「只读」操作，⽆论操作多少次，服务器上的数据都是安全 的，且每次的结果都是相同的，可以缓存</p>
+<p> <strong>POST ⽅法</strong>作用是向 URI 指定的资源提交数据，数据就放在报⽂的 body ⾥，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多 个资源，所以不是幂等的，不可以缓存</p>
+<h2 id="★★☆HTTP-状态码"><a href="#★★☆HTTP-状态码" class="headerlink" title="★★☆HTTP 状态码"></a>★★☆HTTP 状态码</h2><p><strong>1xx 类</strong>状态码属于提示信息，是协议处理中的⼀种中间状态，实际⽤到的⽐较少</p>
+<p><strong>2xx 类</strong>状态码表示服务器成功处理了客户端的请求，也是我们最愿意看到的状态</p>
+<pre class="line-numbers language-none"><code class="language-none">「200 OK」是最常⻅的成功状态码，表示⼀切正常。如果是⾮ HEAD 请求，服务器返回的响应头都会有 body 数据
+
+「204 No Content」也是常⻅的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据
+
+「206 Partial Content」是应⽤于 HTTP 分块下载或断点续传，表示响应返回的 body 数据并不是资源的全部，⽽ 是其中的⼀部分，也是服务器处理成功的状态<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>3xx 类</strong>状态码表示客户端请求的资源发送了变动，需要客户端⽤新的 URL 重新发送请求获取资源，也就是重定向</p>
+<pre class="line-numbers language-none"><code class="language-none">「301 Moved Permanently」表示永久重定向，说明请求的资源已经不存在了，需改⽤新的 URL 再次访问
+
+「302 Found」表示临时重定向，说明请求的资源还在，但暂时需要⽤另⼀个 URL 来访问
+
+301 和 302 都会在响应头⾥使⽤字段 Location ，指明后续要跳转的 URL，浏览器会⾃动重定向新的 URL。 
+
+「304 Not Modified」不具有跳转的含义，表示资源未修改，重定向已存在的缓冲⽂件，也称缓存重定向，⽤于缓 存控制<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>4xx 类</strong>状态码表示客户端发送的报⽂有误，服务器⽆法处理，也就是错误码的含义</p>
+<pre class="line-numbers language-none"><code class="language-none">「400 Bad Request」表示客户端请求的报⽂有错误，但只是个笼统的错误
+
+「403 Forbidden」表示服务器禁⽌访问资源，并不是客户端的请求出错
+
+「404 Not Found」表示请求的资源在服务器上不存在或未找到，所以⽆法提供给客户端<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>5xx 类状态码表示客户端请求报⽂正确，但是服务器处理时内部发⽣了错误，属于服务器端的错误码</p>
+<pre class="line-numbers language-none"><code class="language-none">「500 Internal Server Error」与 400 类型，是个笼统通⽤的错误码，服务器发⽣了什么错误，我们并不知道「501 Not Implemented」表示客户端请求的功能还不⽀持，类似“即将开业，敬请期待”的意思
+
+「502 Bad Gateway」通常是服务器作为⽹关或代理时返回的错误码，表示服务器⾃身⼯作正常，访问后端服务器 发⽣了错误
+
+「503 Service Unavailable」表示服务器当前很忙，暂时⽆法响应服务器，类似“⽹络服务正忙，请稍后重试”的意 思<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="★★★-Cookie-作用、安全性问题、和-Session-的比较"><a href="#★★★-Cookie-作用、安全性问题、和-Session-的比较" class="headerlink" title="★★★ Cookie 作用、安全性问题、和 Session 的比较"></a>★★★ Cookie 作用、安全性问题、和 Session 的比较</h2><p><strong>是什么</strong></p>
+<p>Cookie是服务的发送到用户浏览器并保存在本地的一小块数据，它会在浏览器之后的请求中发送给服务器，用户告知两个请求来自同一浏览器。</p>
+<p><strong>作用</strong></p>
+<p>HTTP请求是无状态的，使用Cookie可以用来保存状态信息。<br>例如可以用来保存Session ID</p>
+<p>Cookie曾用作客户端数据的存储，但现在新的浏览器已经支持各种方式的本地存储，如storage API或Indexed DB,Cookie已经被淘汰了。</p>
+<p><strong>创建过程</strong></p>
+<p>服务器发送的相应报文包含Set-Cookie首部字段，客户端得到相应报文后把Cookie内容保存到浏览器中。</p>
+<p><strong>生命周期</strong></p>
+<p>可对Cookie设置过期时间，若不设置则默认为浏览器会话期间，关闭浏览器窗口，cookie就消失。</p>
+<p><strong>安全性</strong></p>
+<p>设置Secure=true的Cookie只能通过Https协议发送。</p>
+<p><strong>Cookie和Session的比较</strong></p>
+<p>与Cookie不同Session是保存在服务器上的。通过名为JSESSIONID的Cookie保存session id。</p>
+<p>1.存取方式不同</p>
+<p>Cookie只能存取ASCII字符串<br>Session能够存取任何类型的数据，如Java对象等</p>
+<p>2.隐私策略不同</p>
+<p>Cookie存储在浏览器中，对浏览器是可见的，客户端的一些程序可以查看、复制甚至修改Cookie中的内容。</p>
+<p>而Session存储在服务器上，对客户端是透明的，不存在敏感信息泄露风险</p>
+<p>假如使用Cookie存储账号密码等信息，最好进行加密后再存储，提交到服务器后再进行解密。</p>
+<p>3有效期不同</p>
+<p>Cookie可设置过期时间。默认是浏览器关闭。</p>
+<p>Session依赖于名为JSESSIONID的cookie，而该Cookie的过期时间为-1，表示只要关了浏览器就过期，而该服务器上的对应session也就失效了。假如设置session的超时时间过程，服务器累计的Session就会越多，越容易招致内存溢出</p>
+<p>4.服务器压力不同</p>
+<p>Session保存在服务器上，每个用户都会产生一个session，假如并发用户十分多，会产生十分多的session，消耗大量的内存。</p>
+<p>Cookie保存在客户端，不占用服务器资源。</p>
+<p>5.浏览器支持不同</p>
+<p>Cookie是需要浏览器支持的。假如浏览器禁用了cookie，则不能使用cookie</p>
+<p>6.跨域支持上的不同</p>
+<p>Cookie支持跨域访问。Session不支持</p>
+<h2 id="★★☆-缓存-的-Cache-Control-字段，特别是-Expires-和-max-age-的区别。ETag-验证原理"><a href="#★★☆-缓存-的-Cache-Control-字段，特别是-Expires-和-max-age-的区别。ETag-验证原理" class="headerlink" title="★★☆ 缓存 的 Cache-Control 字段，特别是 Expires 和 max-age 的区别。ETag 验证原理"></a>★★☆ 缓存 的 Cache-Control 字段，特别是 Expires 和 max-age 的区别。ETag 验证原理</h2><p>Http协议的cache-control的常见取值及其组合释义:<br>no-cache: 数据内容不能被缓存, 每次请求都重新访问服务器, 若有max-age, 则缓存期间不访问服务器.<br>no-store: 不仅不能缓存, 连暂存也不可以(即: 临时文件夹中不能暂存该资源).<br>private(默认): 只能在浏览器中缓存, 只有在第一次请求的时候才访问服务器, 若有max-age, 则缓存期间不访问服务器.<br>public: 可以被任何缓存区缓存, 如: 浏览器、服务器、代理服务器等.<br>max-age: 相对过期时间, 即以秒为单位的缓存时间.<br>no-cache, private: 打开新窗口时候重新访问服务器, 若设置max-age, 则缓存期间不访问服务器.</p>
+<ul>
+<li> private, 正数的max-age: 后退时候不会访问服务器.</li>
+<li> no-cache, 正数的max-age: 后退时会访问服务器.</li>
+</ul>
+<p><strong>Expires</strong></p>
+<p>给出的日期/时间后，被响应认为是过时。如Expires:Thu, 02 Apr 2009 05:14:08 GMT</p>
+<p>需和Last-Modified结合使用。用于控制请求文件的有效时间，当请求数据在有效期内时客户端浏览器从缓存请求数据而不是服务器端.当缓存中数据失效或过期，才决定从服务器更新数据。</p>
+<p>Expires指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而max-age相对的是文档的请求时间(Atime)</p>
+<p><strong>Etag工作原理</strong></p>
+<p>HTTP协议规格说明定义ETag为“被请求变量的实体标记”（参见14.19）。简单点即服务器响应时给请求URL标记，并在HTTP响应头中将其传送到客户端，类似服务器端返回的格式：</p>
+<p>Etag:“5d8c72a5edda8d6a:3239″</p>
+<p>客户端的查询更新格式是这样的：</p>
+<p>If-None-Match:“5d8c72a5edda8d6a:3239″</p>
+<p>如果ETag没改变，则返回状态304。</p>
+<p>即:在客户端发出请求后，HttpReponse Header中包含Etag:“5d8c72a5edda8d6a:3239″</p>
+<p>标识，等于告诉Client端，你拿到的这个的资源有表示ID：5d8c72a5edda8d6a:3239。当下次需要发Request索要同一个URI的时候，浏览器同时发出一个If-None-Match报头(Http RequestHeader)此时包头中信息包含上次访问得到的Etag:“5d8c72a5edda8d6a:3239″标识。</p>
+<p>If-None-Match:“5d8c72a5edda8d6a:3239“,这样，Client端等于Cache了两份，服务器端就会比对2者的etag。如果If-None-Match为False，不返回200，返回304(Not Modified) Response。</p>
+<h2 id="★★★-长连接与短连接原理以及使用场景，流水线（管道）"><a href="#★★★-长连接与短连接原理以及使用场景，流水线（管道）" class="headerlink" title="★★★ 长连接与短连接原理以及使用场景，流水线（管道）"></a>★★★ 长连接与短连接原理以及使用场景，流水线（管道）</h2><p><strong>短连接</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">连接-&gt;传输数据-&gt;关闭连接
+比如HTTP是无状态的的短链接，浏览器和服务器每进行一次HTTP操作，就建立一次连接，但任务结束就中断连接。
+因为连接后接收了数据就断开了，所以每次数据接受处理不会有联系。 这也是HTTP协议无状态的原因之一。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>长连接</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">连接-&gt;传输数据-&gt;保持连接 -&gt; 传输数据-&gt; ...........-&gt;直到一方关闭连接，多是客户端关闭连接。
+长连接指建立SOCKET连接后不管是否使用都保持连接，但安全性较差。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">长连接多用于操作频繁，点对点的通讯，而且连接数不能太多情况，。每个TCP连接都需要三步握手，
+这需要时间，如果每个操作都是先连接，再操作的话那么处理速度会降低很多，所以每个操作完后都
+不断开，次处理时直接发送数据包就OK了，不用建立TCP连接。例如：数据库的连接用长连接， 如果
+用短连接频繁的通信会造成socket错误，而且频繁的socket 创建也是对资源的浪费。
+
+而像WEB网站的http服务一般都用短链接，因为长连接对于服务端来说会耗费一定的资源，而像WEB网
+站这么频繁的成千上万甚至上亿客户端的连接用短连接会更省一些资源，如果用长连接，而且同时有成
+千上万的用户，如果每个用户都占用一个连接的话，那可想而知吧。所以并发量大，但每个用户无需频
+繁操作情况下需用短连好。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>流水线（PipeLine）是在同一条长连接上发出连续的请求，而不用等待应答返回。这样可以避免连接延迟。</strong></p>
+<h2 id="★★★-HTTP-1-1-的特性"><a href="#★★★-HTTP-1-1-的特性" class="headerlink" title="★★★ HTTP/1.1 的特性"></a>★★★ HTTP/1.1 的特性</h2><ol>
+<li>使⽤ TCP ⻓连接的⽅式改善了 HTTP/1.0 短连接造成的性能开销。 </li>
+<li>⽀持管道（pipeline）⽹络传输，只要第⼀个请求发出去了，不必等其回来，就可以发第⼆个请求出去，可以 减少整体的响应时间</li>
+</ol>
+<h2 id="★★☆-HTTP-1-x-的缺陷，以及-HTTP-2-，HTTP-3的特点"><a href="#★★☆-HTTP-1-x-的缺陷，以及-HTTP-2-，HTTP-3的特点" class="headerlink" title="★★☆ HTTP/1.x 的缺陷，以及 HTTP/2 ，HTTP/3的特点"></a>★★☆ HTTP/1.x 的缺陷，以及 HTTP/2 ，HTTP/3的特点</h2><ul>
+<li>请求 / 响应头部（Header）未经压缩就发送，⾸部信息越多延迟越⼤。只能压缩 Body 的部分； </li>
+<li>发送冗⻓的⾸部。每次互相发送相同的⾸部造成的浪费较多； </li>
+<li>服务器是按请求的顺序响应的，如果服务器响应慢，会招致客户端⼀直请求不到数据，也就是队头阻塞； </li>
+<li>没有请求优先级控制； 请求只能从客户端开始，服务器只能被动响应</li>
+</ul>
+<p><strong>HTTP/2 相⽐ HTTP/1.1 性能上的改进：</strong></p>
+<ol>
+<li>头部压缩: 消除重复的部分,在客户端和服务器同时维护⼀张头信息表，所有字段都会存⼊这个表，⽣成⼀个索 引号，以后就不发送同样字段了，只发送索引号，这样就提⾼速度了。</li>
+<li>⼆进制格式:收到报⽂后，⽆需再将明⽂的报⽂转 成⼆进制，⽽是直接解析⼆进制报⽂，这增加了数据传输的效率</li>
+<li>数据流:HTTP/2 的数据包不是按顺序发送的，同⼀个连接⾥⾯连续的数据包，可能属于不同的回应。因此，必须要对数据 包做标记，指出它属于哪个回应。</li>
+<li>多路复⽤:移除了 HTTP/1.1 中的串⾏请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，⼤幅度提⾼ 了连接的利⽤率。</li>
+</ol>
+<p><strong>HTTP/2 的缺陷？HTTP/3 做了哪些优化？</strong></p>
+<p>​    HTTP/2 多个请求复⽤⼀个TCP连接，⼀旦发⽣丢包，就会阻塞住所有的 HTTP 请求</p>
+<p>​    HTTP/3 使用QUIC协议实现类似 TCP 的可靠性传输，当某个流发⽣丢包时，只会阻塞这个流，其他流不会受到 影响。</p>
+<p>​    TLS3 升级成了最新的 1.3 版本，头部压缩算法也升级成了 QPack 。</p>
+<p>​    HTTPS 要建⽴⼀个连接，要花费 6 次交互，先是建⽴三次握⼿，然后是 TLS/1.3 的三次握⼿。QUIC 直接 把以往的 TCP 和 TLS/1.3 的 6 次交互合并成了 3 次，减少了交互次数。</p>
+<h2 id="★★☆-HTTP-与-FTP-的比较"><a href="#★★☆-HTTP-与-FTP-的比较" class="headerlink" title="★★☆ HTTP 与 FTP 的比较"></a>★★☆ HTTP 与 FTP 的比较</h2><p><strong>1. 同：</strong> </p>
+<p>​    （1）都是应用层协议； </p>
+<p>​    （2）都运行在TCP上，即都使用TCP（而不是UDP）作为其支撑的运输层协议。 </p>
+<p>​    <strong>2. 异：</strong> </p>
+<p>​    （1）HTTP是超文本传输协议，是面向网页的；FTP是文件传输协议，是面向文件的。 </p>
+<p>​    （2）HTTP协议默认端口：80号端口。FTP协议默认端口：21号端口。 </p>
+<p>​    （3）FTP的控制信息是带外（out-of-band）传送的，而HTTP的控制信息是带内（in-band）传送的。 </p>
+<p>​    FTP使用两个并行的TCP连接来传输文件，一个是 <strong>控制连接</strong>（control connection），一个是 <strong>数据连接</strong>（data connection）。 </p>
+<p>​    控制连接用于在两个主机之间传输控制信息，如用户标识、口令、改变远程目录的命令以及“put”和“get”文件的命令。 </p>
+<p>​    数据连接用于实际传输一个文件。 </p>
+<p>​                        <img src="https://uploadfiles.nowcoder.com/images/20210410/613861755_1618026857945_D0879CE15FE8803BB612A6C55B261D56" alt="img"></p>
+<p>​    因为FTP协议使用一个分离的控制连接，因此称FTP的控制信息是带外传送的。<br>​    而HTTP协议是在传输文件的TCP连接中发送请求和响应首部行的，因此其控制信息是带内传送的。 </p>
+<p>   因为FTP协议使用一个分离的控制连接，因此称FTP的控制信息是带外传送的。<br>    而HTTP协议是在传输文件的TCP连接中发送请求和响应首部行的，因此其控制信息是带内传送的。 </p>
+<p>   （4）FTP服务器必须在整个会话期间保留用户的状态（state）信息，而HTTP是无状态的。 </p>
+<p>​    FTP服务器必须把特定的用户账户与控制连接联系起来，随着用户在远程目录树上移动，服务器必须追踪用户在远程目录树上的当前位置。对每个活动着的用户会话的状态进行追踪，可以对FTP会话总数进行限制。 </p>
+<p>   （5）FTP的控制连接是持久连接，数据连接是非持久连接；而HTTP既可以使用非持久连接，也可以使用持久连接，默认方式下，HTTP使用持久连接。 </p>
+<h2 id="★★☆-五种-IO-模型的特点以及比较"><a href="#★★☆-五种-IO-模型的特点以及比较" class="headerlink" title="★★☆ 五种 IO 模型的特点以及比较"></a>★★☆ 五种 IO 模型的特点以及比较</h2><p><strong>阻塞式IO</strong></p>
+<ul>
+<li>使用系统调用，并一直阻塞直到内核将数据准备好，之后再由内核缓冲区复制到用户态，在等待内核准备的这段时间什么也干不了</li>
+<li>下图函数调用期间，一直被阻塞，直到数据准备好且从内核复制到用户程序才返回，这种IO模型为阻塞式IO</li>
+<li>阻塞式IO式最流行的IO模型 </li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/15/Xyu2lk4UOsxrYAE.png" alt="AG9SF_~4B_JLLZF@LZXCYN9.png"></p>
+<p><strong>非阻塞式IO</strong></p>
+<ul>
+<li>内核在没有准备好数据的时候会返回错误码，而调用程序不会休眠，而是不断轮询询问内核数据是否准备好</li>
+<li>下图函数调用时，如果数据没有准备好，不像阻塞式IO那样一直被阻塞，而是返回一个错误码。数据准备好时，函数成功返回。</li>
+<li>应用程序对这样一个非阻塞描述符循环调用成为轮询。</li>
+<li>非阻塞式IO的轮询会耗费大量cpu，通常在专门提供某一功能的系统中才会使用。通过为套接字的描述符属性设置非阻塞式，可使用该功能 </li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/15/PzS5VFK6gZwrtlW.png" alt="HH__Q_Q_9@UFJ_5T6H1J8_3.png"></p>
+<p><strong>IO多路复用</strong></p>
+<ul>
+<li><p>类似与非阻塞，只不过轮询不是由用户线程去执行，而是由内核去轮询，内核监听程序监听到数据准备好后，调用内核函数复制数据到用户态</p>
+</li>
+<li><p>下图中select这个系统调用，充当代理类的角色，不断轮询注册到它这里的所有需要IO的文件描述符，有结果时，把结果告诉被代理的recvfrom函数，它本尊再亲自出马去拿数据</p>
+</li>
+<li><p>IO多路复用至少有两次系统调用，如果只有一个代理对象，性能上是不如前面的IO模型的，但是由于它可以同时监听很多套接字，所以性能比前两者高 </p>
+</li>
+<li><p>多路复用包括： </p>
+<ul>
+<li>select：线性扫描所有监听的文件描述符，不管他们是不是活跃的。有最大数量限制（32位系统1024，64位系统2048）</li>
+<li>poll：同select，不过数据结构不同，需要分配一个pollfd结构数组，维护在内核中。它没有大小限制，不过需要很多复制操作</li>
+<li>epoll：用于代替poll和select，没有大小限制。使用一个文件描述符管理多个文件描述符，使用红黑树存储。同时用事件驱动代替了轮询。epoll_ctl中注册的文件描述符在事件触发的时候会通过回调机制激活该文件描述符。epoll_wait便会收到通知。最后，epoll还采用了mmap虚拟内存映射技术减少用户态和内核态数据传输的开销</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/15/DWf7A4wZ58FEVxX.png" alt="wwzxb8i6h7.png"></p>
+</li>
+</ul>
+<p><strong>信号驱动式IO</strong></p>
+<ul>
+<li><p>使用信号，内核在数据准备就绪时通过信号来进行通知</p>
+</li>
+<li><p>首先开启信号驱动io套接字，并使用sigaction系统调用来安装信号处理程序，内核直接返回，不会阻塞用户态</p>
+</li>
+<li><p>数据准备好时，内核会发送SIGIO信号，收到信号后开始进行io操作 </p>
+<p><img src="https://i.loli.net/2021/08/15/qDR2YzIubMi8Xmk.png" alt="~_K_X_Y_25EE_ODFHF_GL7Y.png"></p>
+</li>
+</ul>
+<p><strong>异步IO</strong></p>
+<ul>
+<li>异步IO依赖信号处理程序来进行通知</li>
+<li>不过异步IO与前面IO模型不同的是：前面的都是数据准备阶段的阻塞与非阻塞，异步IO模型通知的是IO操作已经完成，而不是数据准备完成</li>
+<li>异步IO才是真正的非阻塞，主进程只负责做自己的事情，等IO操作完成(数据成功从内核缓存区复制到应用程序缓冲区)时通过回调函数对数据进行处理</li>
+<li>unix中异步io函数以aio_或lio_打头 </li>
+</ul>
+<p>![0_NM`UJ_S4OV6ZAP3LIH_KF.png](<a target="_blank" rel="noopener" href="https://i.loli.net/2021/08/15/8CgwqrhHIZMLlFa.png">https://i.loli.net/2021/08/15/8CgwqrhHIZMLlFa.png</a>)</p>
+<h2 id="★★★-select、poll、epoll-的原理、比较、以及使用场景；epoll-的水平触发与边缘触发"><a href="#★★★-select、poll、epoll-的原理、比较、以及使用场景；epoll-的水平触发与边缘触发" class="headerlink" title="★★★ select、poll、epoll 的原理、比较、以及使用场景；epoll 的水平触发与边缘触发"></a>★★★ select、poll、epoll 的原理、比较、以及使用场景；epoll 的水平触发与边缘触发</h2><p>select、poll 和 epoll 都是 Linux API 提供的 IO 复用方式。</p>
+<h2 id="★★★从输⼊-URL-到⻚⾯加载完成，发⽣了什么？"><a href="#★★★从输⼊-URL-到⻚⾯加载完成，发⽣了什么？" class="headerlink" title="★★★从输⼊ URL 到⻚⾯加载完成，发⽣了什么？"></a>★★★从输⼊ URL 到⻚⾯加载完成，发⽣了什么？</h2><ol>
+<li>输⼊⽹址按回⻋键或点击跳转</li>
+<li>发送到DNS服务器进⾏DNS解析，获取到我们对应web服务器对应的ip地址</li>
+<li>与Web服务器建⽴TCP连接</li>
+<li>浏览器向web服务器发送http请求</li>
+<li>Web服务器进⾏响应请求并返回指定的url数据（当然这⾥也可能是错误信息或者重定向到新的url地址等）</li>
+<li>浏览器下载web服务器返回的数据及解析html源⽂件</li>
+<li>根据⽂件⽣成DOM树和样式树合成我们的渲染树，解析js，最后渲染我们的⻚⾯然后显示出来</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">UZUMAKIRITO</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://wht000807.github.io/2021/08/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86/">http://wht000807.github.io/2021/08/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">UZUMAKIRITO</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">计算机基础</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">计算机网络</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'flqGif5LcBucuBKWnMYJujyp-gzGzoHsz',
+        appKey: 'rFUqxEBRPI9b8seEpeppBVmS',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/08/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="计算机网络知识点梳理">
+                        
+                        <span class="card-title">计算机网络知识点梳理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">计算机基础</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/20/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9A%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="《计算机网络：自顶向下》读书笔记">
+                        
+                        <span class="card-title">《计算机网络：自顶向下》读书笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">计算机基础</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="454726032"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">UZUMAKIRITO</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">41.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <!--  
+                <span id="busuanzi_container_site_pv" style='display:none'> 
+                    <i class="fa fa-heart-o"></i> 
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span> 
+                </span> 
+                 
+                 
+                    <span id="busuanzi_container_site_uv" style='display:none'> 
+                        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人. 
+                    </span> 
+                 -->
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "4";
+                    var startDate = "28";
+                    var startHour = "16";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wht000807" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1954343433@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1954343433" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1954343433" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script> 
+    $(document).ready(function () { 
+        
+        var int = setInterval(fixCount, 50); // 50ms周期检测函数 
+        var pvcountOffset = 80000; // 初始化首次数据 
+        var uvcountOffset = 20000; 
+        
+        function fixCount() { 
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { 
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); 
+                clearInterval(int); 
+            } 
+            if ($("#busuanzi_container_site_pv").css("display") != "none") { 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int); // 停止检测 
+                } } }); 
+</script>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+        <div style="position:fixed;bottom:125px;right:16px;cursor: pointer;">
+            <a title="兔小巢" target="_blank" rel="noopener" href="https://support.qq.com/products/323460"><i class="fa fa-comments fa-3x"  aria-hidden="true"></i></a>
+        </div>
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    <script type="text/javascript"> var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
+
+</body>
+
+</html>
