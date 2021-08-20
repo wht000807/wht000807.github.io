@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode09--Palindrome Number, UZUMAKIRITO">
+    <meta name="keywords" content="LeetCode235，236-- Lowest Common Ancestor of a Binary Tree, UZUMAKIRITO">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode09--Palindrome Number | UZUMAKIRITO</title>
+    <title>LeetCode235，236-- Lowest Common Ancestor of a Binary Tree | UZUMAKIRITO</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode09--Palindrome Number</h1>
+                    <h1 class="description center-align post-title">LeetCode235，236-- Lowest Common Ancestor of a Binary Tree</h1>
                 </div>
             </div>
         </div>
@@ -465,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-09
+                    2021-05-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-08-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -504,47 +504,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目09：回文数（简单难度）"><a href="#题目09：回文数（简单难度）" class="headerlink" title="题目09：回文数（简单难度）"></a>题目09：回文数（简单难度）</h1><h3 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h3><p>思路：我们应该联想到第七题，整数的反转，判断一个数字是不是回文数，我们可以将它反转过后与原数字比较。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
-            x<span class="token operator">/=</span><span class="token number">10</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&gt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>rev<span class="token operator">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            rev <span class="token operator">=</span> rev<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> rev<span class="token punctuation">;</span>
+                <h1 id="第235题：二叉搜索树的最近公共祖先"><a href="#第235题：二叉搜索树的最近公共祖先" class="headerlink" title="第235题：二叉搜索树的最近公共祖先"></a>第235题：二叉搜索树的最近公共祖先</h1><h3 id="题目内容："><a href="#题目内容：" class="headerlink" title="题目内容："></a>题目内容：</h3><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png" alt="img"></p>
+<p>示例 1:</p>
+<pre class="line-numbers language-none"><code class="language-none">输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例 2:</p>
+<pre class="line-numbers language-none"><code class="language-none">输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="解法一：递归"><a href="#解法一：递归" class="headerlink" title="解法一：递归"></a>解法一：递归</h3><p>由于是二叉搜索树，所以找最近的共同祖先比较容易，总共就三种情况。</p>
+<ul>
+<li>如果给定的两个节点的值都小于根节点的值，那么最近的共同祖先一定在左子树</li>
+<li>如果给定的两个节点的值都大于根节点的值，那么最近的共同祖先一定在右子树</li>
+<li>如果一个大于等于、一个小于等于根节点的值，那么当前根节点就是最近的共同祖先了</li>
+</ul>
+<p>至于前两种情况用递归继续去解决即可。</p>
+<p>代码的话，我们可以通过交换使得 <code>p.val &lt;= q.val</code> ，这样就可以简化后边 <code>if</code> 语句的判断。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">TreeNode</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> p<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 保持 p.val &lt;= q.val</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>val <span class="token operator">&gt;</span> q<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> q<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    <span class="token comment">//如果有一个是根节点就可以提前结束, 当然这个 if 不要也可以</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>val <span class="token operator">==</span> root<span class="token punctuation">.</span>val <span class="token operator">||</span> q<span class="token punctuation">.</span>val <span class="token operator">==</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>val <span class="token operator">&gt;</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> rev <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> x<span class="token operator">==</span>rev<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>时间复杂度：和求转置⼀样，x 有多少位，就循环多少次，所以是 O（log（x）） 。</p>
-<p>空间复杂度：O（1）。</p>
-<h3 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h3><p>思路：我们只需要将这个数的一半进行反转比较就可以了，这样可以减少一半的计算量。</p>
-<p>这里我们要会求一个整数的位数是多少，对于位数较少的情况我们可以用if  &gt;10,&gt;100…来确定。对于位数较多的一般求法是(int)Math.log10(x)+1。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> digit <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">log10</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> reverse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>pop <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> digit<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            pop <span class="token operator">=</span> x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
-            reverse <span class="token operator">=</span> reverse<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>pop<span class="token punctuation">;</span>
-            x <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>digit<span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>x<span class="token operator">/</span><span class="token number">10</span><span class="token operator">==</span>reverse<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>时间复杂度：循环 x 的总位数的⼀半次，所以时间复杂度依旧是 O（log（x））。 </p>
-<p>空间复杂度：O（1），常数个变量。</p>
+<h1 id="第236题：二叉树的最近公共祖先"><a href="#第236题：二叉树的最近公共祖先" class="headerlink" title="第236题：二叉树的最近公共祖先"></a>第236题：二叉树的最近公共祖先</h1><h3 id="题目内容：-1"><a href="#题目内容：-1" class="headerlink" title="题目内容："></a>题目内容：</h3><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>示例 1：</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/14/binarytree.png" alt="img"></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+输出：3
+解释：节点 5 和节点 1 的最近公共祖先是节点 3 。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例 2：</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/14/binarytree.png" alt="img"></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出：5
+解释：节点 5 和节点 4 的最近公共祖先是节点 5 。因为根据定义最近公共祖先节点可以为节点本身。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="解法一：递归-1"><a href="#解法一：递归-1" class="headerlink" title="解法一：递归"></a>解法一：递归</h3><p>我们注意到如果两个节点在左子树中的最近共同祖先是 <code>r</code>，那么当前树的最近公共祖先也就是 <code>r</code>，所以我们可以用递归的方式去解决。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">TreeNode</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> p<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> root <span class="token operator">==</span> p <span class="token operator">||</span> root <span class="token operator">==</span> q <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+    <span class="token class-name">TreeNode</span> leftCommonAncestor <span class="token operator">=</span>  <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">TreeNode</span> rightCommonAncestor <span class="token operator">=</span>  <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">//在左子树中没有找到，那一定在右子树中</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>leftCommonAncestor <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> rightCommonAncestor<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//在右子树中没有找到，那一定在左子树中</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rightCommonAncestor <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> leftCommonAncestor<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//不在左子树，也不在右子树，那说明是根节点</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于 <code>lowestCommonAncestor</code> 这个函数的理解的话，它不一定可以返回最近的共同祖先，如果子树中只能找到 <code>p</code> 节点或者 <code>q</code> 节点，它最终返回其实就是 <code>p</code> 节点或者 <code>q</code> 节点。这其实对应于最后一种情况，也就是 <code>leftCommonAncestor</code> 和 <code>rightCommonAncestor</code> 都不为 <code>null</code>，说明 <code>p</code> 节点和 <code>q</code> 节点分处于两个子树中，直接 <code>return root</code>。</p>
+<p>相对于解法一的话快了很多，因为不需要每次都遍历一遍二叉树，这个解法所有节点只会遍历一次。</p>
 
                 
             </div>
@@ -571,7 +608,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wht000807.github.io/2021/05/09/LeetCode/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/">http://wht000807.github.io/2021/05/09/LeetCode/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/</a>
+                    <a href="http://wht000807.github.io/2021/05/23/LeetCode/LeetCode236%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">http://wht000807.github.io/2021/05/23/LeetCode/LeetCode236%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -927,13 +964,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/11/LeetCode/LeetCode96%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
+                <a href="/2021/05/25/LeetCode/LeetCode146LUR%E7%BC%93%E5%AD%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="LeetCode96--Unique Binary Search Tree">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="LeetCode146-- LRU Cache">
                         
-                        <span class="card-title">LeetCode96--Unique Binary Search Tree</span>
+                        <span class="card-title">LeetCode146-- LRU Cache</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -944,7 +981,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-25
                         </span>
                         <span class="publish-author">
                             
@@ -980,13 +1017,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/07/LeetCode/LeetCode07%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
+                <a href="/2021/05/22/LeetCode/LeetCode232%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="LeetCode07--Reverse Integer">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="LeetCode232-- Implement Queue using Stacks">
                         
-                        <span class="card-title">LeetCode07--Reverse Integer</span>
+                        <span class="card-title">LeetCode232-- Implement Queue using Stacks</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -997,7 +1034,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
                             </span>
                         <span class="publish-author">
                             
