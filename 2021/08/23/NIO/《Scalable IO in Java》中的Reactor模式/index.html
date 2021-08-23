@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="UZUMAKIRITO" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="UZUMAKIRITO" type="application/atom+xml">
 </head>
 
 
@@ -634,9 +634,9 @@ socket <span class="token operator">=</span> <span class="token function">accept
 <p>（1）Reactor：负责响应IO事件，当检测到一个新的事件，将其发送给相应的Handler去处理；新的事件包含连接建立就绪、读就绪、写就绪等。</p>
 <p>（2）Handler:将自身（handler）与事件绑定，负责事件的处理，完成channel的读入，完成处理业务逻辑后，负责将结果写出channel。</p>
 <p>具体模型如图所示：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232217633-124484857.jpg" alt="wpsC334.tmp"></p>
+<p><img src="https://i.loli.net/2021/08/23/5MeqSDK86lTgVAw.png" alt="screenShot.png"></p>
 <p>《Scalable IO in Java》是这样描绘的，图中的accepter，看做是一种特殊的handler。</p>
-<p><img src="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232218623-1679192697.jpg" alt="wpsC345.tmp"></p>
+<p><img src="https://i.loli.net/2021/08/23/rEI5lpGsaQFjcOL.png" alt="screenShot.png"></p>
 <p><strong>参考代码：</strong></p>
 <p><strong>Reactor:</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
@@ -818,10 +818,10 @@ socket <span class="token operator">=</span> <span class="token function">accept
 <p>（1）将Handler处理器的执行放入线程池，多线程进行业务处理。</p>
 <p>（2）而对于Reactor而言，可以仍为单个线程。如果服务器为多核的CPU，为充分利用系统资源，可以将Reactor拆分为两个线程。</p>
 <p><strong>一个简单的图如下：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232219420-1734756772.png"><img src="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232219420-1734756772.png" alt="image"></a></p>
+<p><img src="https://i.loli.net/2021/08/23/VxU37TKGtmlZ9vR.png" alt="screenShot.png"></p>
 <p> <strong>改进后的完整示意图</strong></p>
 <p>《Scalable IO in Java》中Reactor是一条独立的线程，Hander 处于线程池中执行。</p>
-<p><a target="_blank" rel="noopener" href="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232220631-1867817712.jpg"><img src="https://img2018.cnblogs.com/blog/1485398/201810/1485398-20181022232220631-1867817712.jpg" alt="wpsC376.tmp"></a></p>
+<p><img src="https://i.loli.net/2021/08/23/1bdTWGwotuChP9O.png" alt="screenShot.png"></p>
 <p>它是基于单线程做一个线程池的改进，改进 的<strong>Handler</strong>代码如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>crazymakercircle<span class="token punctuation">.</span>config<span class="token punctuation">.</span></span><span class="token class-name">SystemConfig</span><span class="token punctuation">;</span>
 
@@ -1063,7 +1063,7 @@ socket <span class="token operator">=</span> <span class="token function">accept
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wht000807.github.io/2021/08/23/%E6%A1%86%E6%9E%B6%E7%AF%87/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/">http://wht000807.github.io/2021/08/23/%E6%A1%86%E6%9E%B6%E7%AF%87/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/</a>
+                    <a href="http://wht000807.github.io/2021/08/23/NIO/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/">http://wht000807.github.io/2021/08/23/NIO/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1415,18 +1415,17 @@ socket <span class="token operator">=</span> <span class="token function">accept
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/23/%E6%A1%86%E6%9E%B6%E7%AF%87/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/">
+                <a href="/2021/08/23/NIO/Netty%E6%BA%90%E7%A0%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="《Scalable IO in Java》中的Reactor模式">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Netty源码总结(一)">
                         
-                        <span class="card-title">《Scalable IO in Java》中的Reactor模式</span>
+                        <span class="card-title">Netty源码总结(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1436,22 +1435,21 @@ socket <span class="token operator">=</span> <span class="token function">accept
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/NIO/" class="post-category">
-                                    NIO
+                            <a href="/categories/Netty/" class="post-category">
+                                    Netty
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1474,13 +1472,13 @@ socket <span class="token operator">=</span> <span class="token function">accept
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/15/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%88%86%E5%B8%83%E5%BC%8FID%E4%B9%8B%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/">
+                <a href="/2021/08/22/NIO/NIO%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="分布式ID之雪花算法">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="NIO基础三大件">
                         
-                        <span class="card-title">分布式ID之雪花算法</span>
+                        <span class="card-title">NIO基础三大件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1491,14 +1489,14 @@ socket <span class="token operator">=</span> <span class="token function">accept
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    MySQL数据库学习
+                            <a href="/categories/NIO/" class="post-category">
+                                    NIO
                                 </a>
                             
                             
@@ -1508,12 +1506,12 @@ socket <span class="token operator">=</span> <span class="token function">accept
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">框架</span>
                     </a>
                     
                 </div>
@@ -1714,7 +1712,7 @@ socket <span class="token operator">=</span> <span class="token function">accept
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">57.4k</span>&nbsp;字
+                class="white-color">59.2k</span>&nbsp;字
             
             
             

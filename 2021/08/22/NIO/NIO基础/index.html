@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode96--Unique Binary Search Tree, UZUMAKIRITO">
+    <meta name="keywords" content="NIO基础三大件, UZUMAKIRITO">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode96--Unique Binary Search Tree | UZUMAKIRITO</title>
+    <title>NIO基础三大件 | UZUMAKIRITO</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode96--Unique Binary Search Tree</h1>
+                    <h1 class="description center-align post-title">NIO基础三大件</h1>
                 </div>
             </div>
         </div>
@@ -440,8 +440,8 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">力扣算法</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
                     </div>
@@ -452,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
-                                LeetCode算法
+                            <a href="/categories/NIO/" class="post-category">
+                                NIO
                             </a>
                         
                     </div>
@@ -465,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-11
+                    2021-08-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-05
+                    2021-08-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -504,31 +504,153 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第96题：不同的二叉搜索树（Medium）"><a href="#第96题：不同的二叉搜索树（Medium）" class="headerlink" title="第96题：不同的二叉搜索树（Medium）"></a>第96题：不同的二叉搜索树（Medium）</h1><p>题目描述：给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p>
-<p> <img src="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg" alt="img"></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：n = 3
-输出：5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h1 id="NIO基础三大件"><a href="#NIO基础三大件" class="headerlink" title="NIO基础三大件"></a>NIO基础三大件</h1><h4 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a><strong>Channel</strong></h4><p>OIO中，通常来说，一个连接使用有两个流，一个输入流一个输出流。通过两个流不断的进行输入和输出。</p>
+<p>与之相对应，NIO中，通常来说，一个连接就是一个通道Channel表示，所有的 NIO 的 I/O 操作都是从 Channel 开始的。 一个 channel 类似于OIO中的两个 stream的结合体。</p>
+<p>Java NIO中最重要的集中Channel的实现：</p>
+<p>（1）FileChannel</p>
+<p>（2）DatagramChannel</p>
+<p>（3）SocketChannel</p>
+<p>（4）ServerSocketChannel</p>
+<p>四种通道的说明如下：</p>
+<p>FileChannel用于文件的数据读写。</p>
+<p>DatagramChannel用于UDP的数据读写。</p>
+<p>SocketChannel用于TCP的数据读写。</p>
+<p>ServerSocketChannel允许我们监听TCP连接请求，每个请求会创建会一个SocketChannel。</p>
+<h4 id="selector"><a href="#selector" class="headerlink" title="selector"></a><strong>selector</strong></h4><p>通道Channel要进行多路复用，基础就是选择器selector。</p>
+<p>这是一个IO事件的查询器，通过 Selector，一个线程可以查询多个 Channel 的 IO 事件的就绪状态。</p>
+<p>我们要做的工作，就是将要进行状态查询的Channel（相当于流）注册到选择器Seletor中。当我们向一个 Selector 中注册了 Channel 后，Selector 内部的机制就可以自动地为我们不断地查询(select) 这些注册的 Channel 是否有已就绪的 IO 事件(例如可读，可写，网络连接完成等)。</p>
+<p>通过这样的 Selector 机制，我们就可以很简单地使用一个线程高效地管理多个 Channel 了。</p>
+<p>判断一个Channel 能被Selector 复用，有一个前提：判断他是否继承了一个抽象类SelectableChannel。如果继承了SelectableChannel，则可以被复用，否则不能。比如FileChannel。</p>
+<h4 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a><strong>Buffer</strong></h4><p>当我们需要与 NIO Channel 进行交互时，我们就需要使用到 NIO Buffer，即数据从 Buffer读取到 Channel 中，并且从 Channel 中写入到 Buffer 中。</p>
+<p>Buffer的使用，也是NIO非阻塞的重要的前提和基础之一。</p>
+<p>使用步骤：</p>
+<p>一：将数据写入到 Buffer 中；</p>
+<p>二：调用 Buffer.flip()方法，将 NIO Buffer 转换为读模式；</p>
+<p>三：从 Buffer 中读取数据；</p>
+<p>四：调用 Buffer.clear() 或 Buffer.compact()方法，将 Buffer 转换为写模式。</p>
+<p>当我们将数据写入到 Buffer 中时，Buffer 会记录我们已经写了多少的数据；当我们需要从 Buffer 中读取数据时，必须调用 Buffer.flip()将 Buffer 切换为读模式。</p>
+<h4 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>crazymakercircle<span class="token punctuation">.</span>iodemo<span class="token punctuation">.</span>base</span><span class="token punctuation">;</span>
 
-<p>解法：我们可以利用动态规划的思想，直接从底部往上走。求出长度是 0，长度是 1，长度是 2….长度是 n 的解。用一个数组 dp 把这些结果全部保存起来。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">numTrees</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// 长度为 1 到 n</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> len <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> len<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// 将不同的数字作为根节点，只需要考虑到 len</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> root <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> root <span class="token operator">&lt;=</span> len<span class="token punctuation">;</span> root<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> left <span class="token operator">=</span> root <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 左子树的长度</span>
-            <span class="token keyword">int</span> right <span class="token operator">=</span> len <span class="token operator">-</span> root<span class="token punctuation">;</span> <span class="token comment">// 右子树的长度</span>
-            dp<span class="token punctuation">[</span>len<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">*</span> dp<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>crazymakercircle<span class="token punctuation">.</span>config<span class="token punctuation">.</span></span><span class="token class-name">SystemConfig</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">InetSocketAddress</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span></span><span class="token class-name">ByteBuffer</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>channels<span class="token punctuation">.</span></span><span class="token class-name">SelectionKey</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>channels<span class="token punctuation">.</span></span><span class="token class-name">Selector</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>channels<span class="token punctuation">.</span></span><span class="token class-name">ServerSocketChannel</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>channels<span class="token punctuation">.</span></span><span class="token class-name">SocketChannel</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Iterator</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SelectorDemo</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Client</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">/**
+         * 客户端
+         */</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name">InetSocketAddress</span> address<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token class-name">SystemConfig</span><span class="token punctuation">.</span>SOCKET_SERVER_IP<span class="token punctuation">,</span> <span class="token class-name">SystemConfig</span><span class="token punctuation">.</span>SOCKET_SERVER_PORT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+            <span class="token comment">// 1、获取通道（channel）</span>
+            <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span>  <span class="token class-name">SocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 2、切换成非阻塞模式</span>
+            socketChannel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 3、分配指定大小的缓冲区</span>
+            <span class="token class-name">ByteBuffer</span> byteBuffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            byteBuffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"hello world  "</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            byteBuffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            socketChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>byteBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            socketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">testClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Server</span>
+    <span class="token punctuation">{</span>
 
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+        <span class="token punctuation">{</span>
+
+            <span class="token comment">// 1、获取Selector选择器</span>
+            <span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 2、获取通道</span>
+            <span class="token class-name">ServerSocketChannel</span> serverSocketChannel <span class="token operator">=</span> <span class="token class-name">ServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 3.设置为非阻塞</span>
+            serverSocketChannel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 4、绑定连接</span>
+            serverSocketChannel<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token class-name">SystemConfig</span><span class="token punctuation">.</span>SOCKET_SERVER_PORT<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 5、将通道注册到选择器上,并注册的操作为：“接收”操作</span>
+            serverSocketChannel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_ACCEPT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 6、采用轮询的方式，查询获取“准备就绪”的注册过的操作</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>selector<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment">// 7、获取当前选择器中所有注册的选择键（“已经准备就绪的操作”）</span>
+                <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SelectionKey</span><span class="token punctuation">&gt;</span></span> selectedKeys <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span>selectedKeys<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token comment">// 8、获取“准备就绪”的时间</span>
+                    <span class="token class-name">SelectionKey</span> selectedKey <span class="token operator">=</span> selectedKeys<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 9、判断key是具体的什么事件</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>selectedKey<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token comment">// 10、若接受的事件是“接收就绪” 操作,就获取客户端连接</span>
+                        <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span> serverSocketChannel<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment">// 11、切换为非阻塞模式</span>
+                        socketChannel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment">// 12、将该通道注册到selector选择器上</span>
+                        socketChannel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>selectedKey<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token comment">// 13、获取该选择器上的“读就绪”状态的通道</span>
+                        <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SocketChannel</span><span class="token punctuation">)</span> selectedKey<span class="token punctuation">.</span><span class="token function">channel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token comment">// 14、读取数据</span>
+                        <span class="token class-name">ByteBuffer</span> byteBuffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">int</span> length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>length <span class="token operator">=</span> socketChannel<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>byteBuffer<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                            byteBuffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>byteBuffer<span class="token punctuation">.</span><span class="token function">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            byteBuffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        socketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+
+                    <span class="token comment">// 15、移除选择键</span>
+                    selectedKeys<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// 7、关闭连接</span>
+            serverSocketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">testServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="NIO总结"><a href="#NIO总结" class="headerlink" title="NIO总结"></a>NIO总结</h4><p>（1）客户端发起的连接操作是异步的，可以通过在多路复用器注册OP_CONNECT等待后续结果，不需要像之前的客户端那样被同步阻塞。</p>
+<p>（2）SocketChannel的读写操作都是异步的，如果没有可读写的数据它不会同步等待，直接返回，这样I/O通信线程就可以处理其他的链路，不需要同步等待这个链路可用。</p>
+<p>（3）线程模型的优化：由于JDK的Selector在Linux等主流操作系统上通过epoll实现，它没有连接句柄数的限制（只受限于操作系统的最大句柄数或者对单个进程的句柄限制），这意味着一个Selector线程可以同时处理成千上万个客户端连接，而且性能不会随着客户端的增加而线性下降。因此，它非常适合做高性能、高负载的网络服务器。</p>
 
                 
             </div>
@@ -555,7 +677,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wht000807.github.io/2021/05/11/LeetCode/LeetCode96%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">http://wht000807.github.io/2021/05/11/LeetCode/LeetCode96%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</a>
+                    <a href="http://wht000807.github.io/2021/08/22/NIO/NIO%E5%9F%BA%E7%A1%80/">http://wht000807.github.io/2021/08/22/NIO/NIO%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,8 +719,8 @@
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">力扣算法</span>
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                         </div>
@@ -911,13 +1033,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/12/LeetCode/LeetCode102%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
+                <a href="/2021/08/23/NIO/%E3%80%8AScalable%20IO%20in%20Java%E3%80%8B%E4%B8%AD%E7%9A%84Reactor%E6%A8%A1%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeetCode102--Binary Tree Level Order Traversal">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="《Scalable IO in Java》中的Reactor模式">
                         
-                        <span class="card-title">LeetCode102--Binary Tree Level Order Traversal</span>
+                        <span class="card-title">《Scalable IO in Java》中的Reactor模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -928,14 +1050,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
-                                    LeetCode算法
+                            <a href="/categories/NIO/" class="post-category">
+                                    NIO
                                 </a>
                             
                             
@@ -949,8 +1071,8 @@
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">力扣算法</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">框架</span>
                     </a>
                     
                 </div>
@@ -964,13 +1086,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/09/LeetCode/LeetCode09%20%E5%9B%9E%E6%96%87%E6%95%B0/">
+                <a href="/2021/08/15/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%88%86%E5%B8%83%E5%BC%8FID%E4%B9%8B%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="LeetCode09--Palindrome Number">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="分布式ID之雪花算法">
                         
-                        <span class="card-title">LeetCode09--Palindrome Number</span>
+                        <span class="card-title">分布式ID之雪花算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -981,14 +1103,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode%E7%AE%97%E6%B3%95/" class="post-category">
-                                    LeetCode算法
+                            <a href="/categories/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    MySQL数据库学习
                                 </a>
                             
                             
@@ -998,12 +1120,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%9B%E6%89%A3%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">力扣算法</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
